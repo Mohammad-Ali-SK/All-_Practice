@@ -8,8 +8,10 @@ function makeBubble(){
     }
     document.querySelector('.pan-btn').innerHTML = culter;  
 };
+
+
 function timeSet(){
-    let time = 3;
+    let time = document.querySelector('.time').textContent;
    let timer = setInterval((e) => {
         if(time > 0){
             time--;
@@ -23,6 +25,7 @@ function timeSet(){
         }
     },1000)
 }
+
 function hit(){
     randomNum = Math.floor(Math.random() * 10);
     document.querySelector('.hit').textContent = randomNum;

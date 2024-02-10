@@ -9,18 +9,6 @@ function makeBuble(){
     document.querySelector('.pan-btn').innerHTML = culter;
 };
 
-function time(){
-    let time = 9;
-    let timer = setInterval((e) => {
-        if(time > 0){
-            time--;
-        document.querySelector('.time').textContent = time;
-        }else{
-            clearInterval(timer);
-            document.querySelector('.pan-btn').innerHTML =`<div>Your Scrore is ${score}</div>` ;
-        }
-    },1000)
-}
 
 function ChHit(){
     hitNum = Math.floor(Math.random() * 10);
@@ -38,9 +26,38 @@ panBtn.addEventListener('click',(e) => {
     ChHit();
     makeBuble();
    }
+});
+
+function time(){
+    let time = document.querySelector('.time').textContent;
+    let timer = setInterval((e) => {
+        if(time > 0){
+            time--;
+        document.querySelector('.time').textContent = time;
+        }else{
+            clearInterval(timer);
+            document.querySelector('.pan-btn').innerHTML =`<div>Your Scrore is ${score}</div>` ;
+        }
+    },1000)
+}
+
+
+document.querySelector('.btn').addEventListener('click', (e) => {
+    let zero = Number(document.querySelector('.time').textContent);
+    // console.log(zero)
+    if(zero === 60){
+        time();
+        document.querySelector('.btn').textContent = 'Restart';
+    }
+    else{
+        time();
+        document.querySelector('.scor').textContent = 0;
+        makeBuble();
+        ChHit();
+    }
 })
 
-time();
+// time();
 makeBuble();
 ChHit();
 // scoreP();

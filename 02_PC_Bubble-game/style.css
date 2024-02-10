@@ -9,11 +9,17 @@ html,body{
     height: 100%;
 
 }
+.btn{
+    margin-bottom: 40px;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
 #main{
     width: 100vw;
     height: 100vh;
     background-color: rgb(13, 224, 13);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }

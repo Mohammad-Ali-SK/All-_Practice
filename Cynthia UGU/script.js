@@ -30,3 +30,8 @@ function loco(){
     
 };
 loco();
+let image = document.querySelectorAll('.elem');
+
+image.forEach((e) => {
+  console.log(e.target.data-img);
+})
